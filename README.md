@@ -1,8 +1,8 @@
 # Zero-Cost AI-Driven Lead Qualification Pipeline
 
-A fully automated, no-code lead qualification pipeline built with free tools for early-stage startups. Designed to qualify B2B hydrogen industry vendors and pass only best-fit leads to a sales CRM.
+A fully automated, no-code lead qualification pipeline built with free tools for early-stage startups. Designed to qualify B2B hydrogen industry vendors and pass only best-fit leads to a sales CRM. But this can be extended or adapted to other domains too.
 
-[Live Portfolio](https://jerryn-joy.github.io) · [Workflow Diagram](https://miro.com/app/board/uXjVIqjpoh4=/?share_link_id=861433035153)
+[Workflow Diagram](https://miro.com/app/board/uXjVIqjpoh4=/?share_link_id=861433035153)
 
 ---
 
