@@ -1,141 +1,88 @@
-# 🚀 Zero-Cost AI-Driven Lead Qualification Pipeline
+# Zero-Cost AI-Driven Lead Qualification Pipeline
 
-A fully automated, no-code lead qualification pipeline built with **free tools** for early-stage startups.  
-Specifically designed to qualify **B2B hydrogen industry vendors** and pass only the best-fit leads to a sales CRM.
+A fully automated, no-code lead qualification pipeline built with free tools for early-stage startups. Designed to qualify B2B hydrogen industry vendors and pass only best-fit leads to a sales CRM.
 
-🔗 [Live Portfolio](https://jerryn-joy.github.io)  
-📂 [Workflow Diagram](https://miro.com/app/board/uXjVIqjpoh4=/?share_link_id=861433035153)
+[Live Portfolio](https://jerryn-joy.github.io) · [Workflow Diagram](https://miro.com/app/board/uXjVIqjpoh4=/?share_link_id=861433035153)
 
 ---
 
-## 📌 What This Project Does
+## What it does
 
-- Captures leads from multiple sources (form, chatbot, business cards, social)
-- Scores them using a pre-trained AI model (`facebook/bart-mini`) for **intent**
-- Filters for only **hydrogen-related vendors**
-- Sends hot leads to **HubSpot** for sales follow-up
-- Built 100% with **no-code tools** and **free-tier services**
+Captures leads from multiple sources, scores them using a pre-trained NLP model for intent, filters for hydrogen-related vendors, and sends hot leads to HubSpot for sales follow-up — built entirely with no-code tools on free-tier services.
 
----
-
-## 🛠️ Tools Used (All Free Tiers)
-
-| Tool            | Purpose                                 |
-|------------------|-----------------------------------------|
-| **Airtable**     | Central database (CRM for leads)        |
-| **Fillout / Tally.so** | Website lead capture forms        |
-| **Voiceflow**    | Chatbot that collects data + context    |
-| **BizConnect**   | Business card scanner for trade fairs   |
-| **HubSpot (Free)** | CRM for sales follow-up               |
-| **Make.com**     | Automation between Airtable ↔ HubSpot   |
-| **BART-mini**    | Open-source model used for NLP scoring  |
+```
+Lead Capture → Airtable → AI Scoring → Qualified Leads → HubSpot → Sales → Outcome Sync → Airtable
+```
 
 ---
 
-## 🧩 End-to-End Flow
+## Tech Stack (All Free Tier)
 
-1. **Lead Collection**
-    - Website form via Fillout or Tally
-    - Voiceflow chatbot on homepage
-    - BizConnect for event leads
-    - Contact form or social outreach
-
-2. **Storage in Airtable**
-    - Leads land in a "Raw Leads" table
-    - Metadata captured (source, message, company name, etc.)
-
-3. **AI Scoring + Filtering**
-    - Pre-trained model (facebook/bart-mini) classifies message intent
-    - Firmographic filtering (e.g., hydrogen, electrolyzer, fuel cell)
-    - Leads tagged and routed to “Qualified Vendors” view
-
-4. **HubSpot Integration (via Make)**
-    - Only hot leads are sent to HubSpot
-    - Auto-assign to sales rep
-    - Follow-up stages handled inside HubSpot
-
-5. **Outcome Logging**
-    - Closed-Won or Lost feedback pushed back to Airtable for review
-    - Optionally re-nurture cold leads via MailerLite
+| Tool | Purpose |
+|---|---|
+| Airtable | Central lead database |
+| Fillout / Tally.so | Website lead capture forms |
+| Voiceflow | Chatbot for lead collection |
+| BizConnect | Business card scanning at trade fairs |
+| HubSpot Free | CRM for sales follow-up |
+| Make.com | Automation between Airtable and HubSpot |
+| facebook/bart-mini | Open-source NLP model for intent scoring |
 
 ---
 
-## 🎯 Why This Is Valuable
+## End-to-End Flow
 
-| Feature                | Benefit                          |
-|------------------------|----------------------------------|
-| No-code                | Easy to set up & maintain        |
-| Free tools only        | Zero cost to build and run       |
-| Industry-specific      | Tailored for hydrogen vendors    |
-| Scalable               | Can add LinkedIn/website enrichments later |
-| Recruiter-ready        | Professional architecture        |
+### 1. Lead Collection
+
+Leads enter from four sources: a website form (Fillout or Tally), a Voiceflow chatbot, BizConnect at events, and direct contact or social outreach.
+
+### 2. Storage in Airtable
+
+All incoming leads land in a Raw Leads table with metadata captured at source — message, company name, source channel, and any context from the chatbot.
+
+### 3. AI Scoring & Filtering
+
+A pre-trained `facebook/bart-mini` model classifies message intent. Leads are also filtered firmographically for hydrogen-related keywords (electrolyzer, fuel cell, etc.). Qualifying leads are tagged and routed to the Qualified Vendors view.
+
+### 4. HubSpot Integration via Make.com
+
+Only hot leads are pushed to HubSpot, where they are auto-assigned to a sales rep and managed through follow-up stages.
+
+### 5. Outcome Logging
+
+Closed-Won or Lost outcomes are synced back from HubSpot to Airtable for review. Cold leads can optionally be re-entered into a nurture sequence via MailerLite.
 
 ---
 
-## 🔄 Airtable Views
+## Airtable Views
 
-| View Name         | Purpose                            |
-|-------------------|-------------------------------------|
-| Raw Leads         | All unprocessed leads               |
-| Qualified Vendors | AI-scored and hydrogen-validated    |
-| Cold Leads        | No response, for re-nurturing       |
-| Closed Deals      | Deal stage synced from HubSpot      |
+| View | Purpose |
+|---|---|
+| Raw Leads | All unprocessed incoming leads |
+| Qualified Vendors | AI-scored and hydrogen-validated |
+| Cold Leads | No response, available for re-nurturing |
+| Closed Deals | Deal stage synced back from HubSpot |
 
 ---
 
-## 📂 Repository Contents
+## Repo Structure
 
 ```text
 ├── assets/
-│   ├── lead_workflow_diagram.png     # Visual overview of system
-│   ├── screenshot_airtable.png       # (optional) example of Airtable view
-│   └── resume.pdf                    # (optional) if you're showcasing this repo
+│   ├── lead_workflow_diagram.png     # Visual overview of the pipeline
+│   └── screenshot_airtable.png       # Example Airtable view
 ├── docs/
-│   └── project_info.md               # Walkthrough of system usage
-├── README.md                         # You're reading this!
-└── LICENSE                           # Open license (MIT recommended)
-
-```
----
-
-## 📝 Bonus File: `docs/project_info.md`
-
-```markdown
-# 🔧 How to Replicate This Project (No Code)
-
-## 🧠 What You Need
-
-- Airtable account
-- Make.com account
-- HubSpot Free CRM
-- Tally.so or Fillout.com (for lead forms)
-- Voiceflow (for chatbot)
-- BizConnect (optional for events)
-
-## 🪜 Setup Steps
-
-1. Create Airtable base with tables:
-    - Raw Leads
-    - Qualified Vendors
-    - Cold Leads
-    - Closed Deals
-
-2. Set up a form in Fillout or Tally → connect to Airtable
-
-3. Deploy chatbot in Voiceflow → connect webhook to Airtable
-
-4. Use Make.com:
-    - Scenario 1: Airtable → HubSpot (new lead in Qualified View)
-    - Scenario 2: HubSpot → Airtable (update lead status)
-
-5. Use pre-trained BART model on collected messages for intent score (optional if running manually or via external script)
-
+│   └── project_info.md               # Setup and replication guide
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## 🔄 Data Flow Diagram
+## What this demonstrates
 
-📥 Lead Capture → Airtable → AI Scoring → Qualified Leads → HubSpot → Sales → Outcome Sync → Airtable
-
-
+- End-to-end pipeline design across multiple tools and data sources
+- Practical use of a pre-trained NLP model (BART) in a no-code workflow
+- CRM integration with conditional routing logic
+- Feedback loop design (outcome sync back to source database)
+- Building production-style tooling with zero infrastructure cost
